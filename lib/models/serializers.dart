@@ -11,7 +11,7 @@ const builtListPost = FullType(BuiltList, [FullType(Post)]);
 @SerializersFor([Post])
 final Serializers serializers = _$serializers;
 
-final standSerializers = (serializers.toBuilder()
+final standardSerializers = (serializers.toBuilder()
       ..addBuilderFactory(builtListPost, () => ListBuilder<Post>())
       ..add(Iso8601DateTimeSerializer())
       ..addPlugin(StandardJsonPlugin()))

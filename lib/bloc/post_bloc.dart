@@ -62,8 +62,8 @@ class PostBloc extends Bloc<PostEvent, PostState> {
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
 
-      return (standSerializers.deserialize(data, specifiedType: builtListPost)
-              as BuiltList<Post>)
+      return (standardSerializers.deserialize(data,
+              specifiedType: builtListPost) as BuiltList<Post>)
           .toList();
     } else {
       throw Exception('error fetching posts');
